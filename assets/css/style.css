@@ -1,0 +1,40 @@
+body{
+    background: url("../img/theater.jpg");
+    background-position: left;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+/*HEIGHT BODY */
+.heightBody {
+    height: 100vh;
+}
+/* Size logo partenaires */
+.partnerLogo {
+    height: 30px;
+}
+/* Size logo partenaires */
+/* Size logo navbar */
+.lhp3Logo {
+    height: 30px;
+}
+/* Size logo navbar */
+/* Size logo title */
+.lhp3LogoTitle {
+    height: 16px;
+}
+/* Size logo title */
+.borderRadiusPicLogin {
+    border-radius: 10px;
+}
+.borderRadiusFormLogin {
+    background-color: #ffaa0169;
+    border-radius: 10px;
+}
+.error {
+    color: red;
+}
+.validate {
+    color: green;
+}
