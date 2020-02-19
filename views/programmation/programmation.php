@@ -16,7 +16,7 @@
 
 <body>
   <?php require('../header.php') ?>
-  <div class="container heightBody">
+  <div class="container">
     <h1>Liste des spectacles</h1>
     <form class="form-inline my-2 my-lg-0" action="" method="POST">
       <input class="form-control mr-sm-2" type="search" name="search" placeholder="Recherche">
@@ -24,12 +24,12 @@
     </form>
     <?php if (isset($_POST["search"])) : ?>
       <?php foreach ($resultSearch as $search) : ?>
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="card mb-3 borderRadiusFormLogin">
           <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="<?= '../../assets/img/' . $search['img_Shows'] ?>" class="card-img" alt="Image Concert">
+            <div class="col-4">
+              <img src="../../assets/img/<?= $search['img_Shows'] ?>" class="card-img" alt="Image Concert">
             </div>
-            <div class="col-md-8">
+            <div class="col-8">
               <div class="card-body">
                 <p class="card-text"><small class="text-muted"><?= $search['types_ShowTypes']; ?></small></p>
                 <h5 class="card-title"><?= $search['title_Shows']; ?></h5>
@@ -42,19 +42,19 @@
     <?php endif; ?>
     <hr>
     <?php foreach ($months as $month) : ?>
-      <p><?= strftime('%B', strtotime($month["month"])) ?></p>
+      <p class="h2"><?= strftime('%B', strtotime($month["month"])) ?></p>
       <?php foreach ($shows as $content) : ?>
         <?php if (strftime('%B', strtotime($month["month"])) == strftime('%B', strtotime($content['dateHour_Shows']))) : ?>
-          <div class="card mb-3" style="max-width: 540px;">
+          <div class="card mb-3  borderRadiusFormLogin">
             <div class="row no-gutters">
-              <div class="col-md-4">
-                <img src="<?= $content['img_Shows']; ?>" class="card-img" alt="...">
+              <div class="col-4">
+                <img src="../../assets/img/<?= $content['img_Shows']; ?>" class="card-img" alt="Image Concert">
               </div>
-              <div class="col-md-8">
+              <div class="col-8">
                 <div class="card-body">
                   <p class="card-text"><small class="text-muted"><?= $content['types_ShowTypes']; ?></small></p>
                   <h5 class="card-title"><?= $content['title_Shows']; ?></h5>
-                  <p class="card-text"><?= utf8_encode(strftime('%d %B %Y', strtotime($content['dateHour_Shows']))); ?>(<?= strftime('%HH%M', strtotime($content['duration_Shows'])); ?>)</p>
+                  <p class="card-text"><?= utf8_encode(strftime('%d %B %Y', strtotime($content['dateHour_Shows']))) . ' ' . strftime('%HH%M', strtotime($content['duration_Shows'])); ?>)</p>
                 </div>
               </div>
             </div>

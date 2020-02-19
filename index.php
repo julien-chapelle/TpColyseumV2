@@ -21,13 +21,13 @@
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="../assets/img/joker-banniere.jpg" class="d-block w-100" alt="...">
+                            <img src="assets/img/joker-banniere.jpg" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="../assets/img/foresti.jpg" class="d-block w-100" alt="...">
+                            <img src="assets/img/foresti.jpg" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="../assets/img/humour.jpg" class="d-block w-100" alt="...">
+                            <img src="assets/img/humour.jpg" class="d-block w-100" alt="...">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">

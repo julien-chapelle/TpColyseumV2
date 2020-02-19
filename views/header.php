@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-white bg-white sticky-top">
   <a class="navbar-brand" href="http://colyseumv2/">
-    <img src="assets/img/logoLhp3Arena.png" alt="logo Lhp3 Arena" class="lhp3Logo" title="Retour accueil" />
+    <img src="../../assets/img/logoLhp3Arena.png" alt="logo Lhp3 Arena" class="lhp3Logo" title="Retour accueil" />
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
