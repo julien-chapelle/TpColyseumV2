@@ -22,6 +22,7 @@
         <!-- FORM -->
         <form method="POST" action="">
           <div class="form-group m-lg-5 m-3 p-5 borderRadiusFormLogin shadow">
+            <p class="h3">CREATION DE COMPTE</p>
             <!-- LASTNAME -->
             <label for="lastnameAdd" class="my-2"><i class="fas fa-user"></i> Nom</label>
             <input type="text" class="form-control" id="lastnameAdd" name="lastnameAdd" title="Nom" placeholder="ex: Dupont" value="<?= isset($_POST['addClientSubmit']) && !empty($arrayError) ? $_POST['lastnameAdd'] : '' ?>" />
@@ -46,9 +47,19 @@
             <label for="passwordConfirm" class="my-2"><i class="fas fa-unlock-alt"></i> Confirmer mot de passe</label>
             <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm" title="Mot de passe de confirmation" />
             <p class="error"><?= isset($arrayError['passwordConfirm']) ? $arrayError['passwordConfirm'] : '' ?></p>
+            <!-- ACCORD AGREEMENT -->
+            <div class="custom-control custom-checkbox">
+              <input class="custom-control-input" type="checkbox" value="clientApprouve" name="clientApprouve" id="agreementClient">
+              <label class="custom-control-label" for="agreementClient">
+                <small>
+                  En créant un compte, vous acceptez les conditions d'utilisation. Pour plus d'informations sur les pratiques de confidentialité de LHP3 Arena, consultez la déclaration de confidentialité de LHP3 Arena. Nous vous enverrons occasionnellement des e-mails liés au compte.
+                </small>
+              </label>
+            </div>
             <!-- SUBMIT -->
             <button class="btn btn-outline-dark shadow my-3" type="submit" name="addClientSubmit">S'enregistrer</button>
             <p class="validate"><?= isset($_POST['addClientSubmit']) && isset($arrayError) && empty($arrayError) ? 'Compte créé avec succès !' : '' ?></p>
+            <p class="error"><?= isset($arrayError['clientApprouve']) ? $arrayError['clientApprouve'] : '' ?></p>
           </div>
         </form>
       </div>

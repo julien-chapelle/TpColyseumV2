@@ -95,8 +95,7 @@ class Show extends Database
     public function getShow($idShows)
     {
         $queryShows = $this->db->query('SELECT * FROM `colyseum_shows` INNER JOIN `colyseum_showtypes` ON `colyseum_shows`.`id_ShowTypes` = `colyseum_showtypes`.`id_ShowTypes` INNER JOIN `colyseum_genres` ON `colyseum_shows`.`id_Genres` = `colyseum_genres`.`id_Genres` WHERE `id_Shows` = ' . $idShows);
-        foreach ($queryShows->fetchAll() as $index => $value)
-        {
+        foreach ($queryShows->fetchAll() as $index => $value) {
             $this->setId_Shows($value['id_Shows']);
             $this->setImg_Shows($value['img_Shows']);
             $this->setTitle_Shows($value['title_Shows']);
@@ -118,7 +117,6 @@ class Show extends Database
         $queryShows->bindValue(':idShowtypes', $this->getId_ShowTypes(), PDO::PARAM_INT);
         $queryShows->bindValue(':idGenres', $this->getId_Genres(), PDO::PARAM_INT);
         $queryShows->execute();
-
     }
     public function updateShows($idShows)
     {
@@ -155,7 +153,6 @@ class Show extends Database
         } else {
             echo 'Erreur';
         }
-
     }
     public function toListAll()
     {
@@ -163,19 +160,35 @@ class Show extends Database
         return $query_all->fetchAll();
     }
     public function toListByMonth()
-    {  
-        
-       $query_cards = 'SELECT colyseum_shows.img_Shows, colyseum_shows.title_Shows, colyseum_shows.performer_Shows, colyseum_shows.dateHour_Shows, colyseum_shows.duration_Shows, colyseum_showTypes.types_ShowTypes, DATE_FORMAT(colyseum_shows.dateHour_Shows,\'%M\') as `month` FROM colyseum_shows INNER JOIN colyseum_showtypes ON colyseum_shows.id_ShowTypes = colyseum_showtypes.id_ShowTypes ORDER BY UNIX_TIMESTAMP(colyseum_shows.dateHour_Shows) ASC';
+    {
+
+        $query_cards = 'SELECT colyseum_shows.img_Shows, colyseum_shows.title_Shows, colyseum_shows.performer_Shows, colyseum_shows.dateHour_Shows, colyseum_shows.duration_Shows, colyseum_showTypes.types_ShowTypes, DATE_FORMAT(colyseum_shows.dateHour_Shows,\'%M\') as `month` 
+       FROM colyseum_shows 
+       INNER JOIN colyseum_showtypes 
+       ON colyseum_shows.id_ShowTypes = colyseum_showtypes.id_ShowTypes 
+       ORDER BY UNIX_TIMESTAMP(colyseum_shows.dateHour_Shows) ASC';
 
         $pdoResult = $this->db->prepare($query_cards);
-        
-        if ($pdoResult->execute())
-        {
+
+        if ($pdoResult->execute()) {
             $result = $pdoResult->fetchAll(PDO::FETCH_ASSOC);
             return $result;
+        } else {
+            echo 'Erreur';
         }
-        else
-        {
+    }
+    public function toMonthSelect()
+    {
+        $monthSelect = 'SELECT DISTINCT DATE_FORMAT(`dateHour_Shows`, "%M") as `monthSelect`
+            FROM `colyseum_shows`
+            ORDER BY `dateHour_Shows` ASC';
+
+        $monthSelectResult = $this->db->prepare($monthSelect);
+
+        if ($monthSelectResult->execute()) {
+            $monthSelectDisplay = $monthSelectResult->fetchAll(PDO::FETCH_ASSOC);
+            return $monthSelectDisplay;
+        } else {
             echo 'Erreur';
         }
     }

@@ -51,9 +51,9 @@
         <?php if (isset($_POST["search"])) : ?>
         <?php else : ?>
             <?php foreach ($months as $month) : ?>
-                <h3><?= ucfirst(utf8_encode(strftime('%B', strtotime($month["month"])))) ?></h3>
+                <h3><?= ucfirst(utf8_encode(strftime('%B', strtotime($month["monthSelect"])))); ?></h3>
                 <?php foreach ($shows as $content) : ?>
-                    <?php if (strftime('%B', strtotime($month["month"])) == strftime('%B', strtotime($content['dateHour_Shows']))) : ?>
+                    <?php if (strftime('%B', strtotime($month["monthSelect"])) == strftime('%B', strtotime($content['dateHour_Shows']))) : ?>
                         <div class="card mb-3 borderRadiusFormLogin">
                             <div class="row no-gutters">
                                 <div class="col-md-4">

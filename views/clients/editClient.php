@@ -22,6 +22,7 @@
         <!-- FORM -->
         <form method="POST" action="">
           <div class="form-group m-lg-5 m-3 p-5 borderRadiusFormLogin shadow">
+            <p class="h3">MODIFICATION DES INFORMATIONS</p>
             <!-- LASTNAME -->
             <label for="lastnameEdit" class="my-2"><i class="fas fa-user"></i> Nom</label>
             <input type="text" class="form-control" id="lastnameEdit" name="lastnameEdit" title="Nom" placeholder="ex: Dupont" value="<?= isset($_POST['editClientSubmit']) && !empty($arrayError) ? $_POST['lastnameEdit'] : $_SESSION['lastname'] ?>" />

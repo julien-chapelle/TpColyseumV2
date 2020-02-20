@@ -22,6 +22,7 @@
         <!-- FORM -->
         <form method="POST" action="">
           <div class="form-group m-lg-5 m-3 p-5 borderRadiusFormLogin shadow">
+            <p class="h3">SUPPRESSION DU COMPTE</p>
             <p class="h3 error"><?= isset($_SESSION) ? '<i class="fas fa-exclamation-triangle"></i> ATTENTION ' . $_SESSION['firstname'] . ' !' : '' ?></p>
             <p class="h5 error">Vous êtes sur le point de supprimer définitivement votre compte</p>
             <!-- PASSWORD CONFIRME -->

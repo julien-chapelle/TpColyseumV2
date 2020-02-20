@@ -15,19 +15,19 @@
 
 <body>
     <?php require('views/header.php') ?>
-    <div class="container heightBody">
+    <div class="container-fluid heightBody p-0 m-0">
         <div class="row justify-content-center">
-            <div class="col-12">
+            <div class="col">
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="assets/img/joker-banniere.jpg" class="d-block w-100" alt="...">
+                            <img src="assets/img/joker-banniere.jpg" class="carouselPicSize" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="assets/img/foresti.jpg" class="d-block w-100" alt="...">
+                            <img src="assets/img/foresti.jpg" class="carouselPicSize" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="assets/img/humour.jpg" class="d-block w-100" alt="...">
+                            <img src="assets/img/humour.jpg" class="carouselPicSize" alt="...">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -41,7 +41,7 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-12">
-                        <div id="carouselExampleCaptionsMedia" class="carousel slide my-2" data-ride="carousel" title="Avis clients">
+                        <div id="carouselExampleCaptionsMedia" class="carousel slide my-2 carouselSpeed" data-ride="carousel" title="Avis clients">
                             <ol class="carousel-indicators">
                                 <li data-target="#carouselExampleCaptionsMedia" data-slide-to="active"></li>
                                 <li data-target="#carouselExampleCaptionsMedia" data-slide-to="1"></li>
@@ -80,6 +80,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="script/script.js"></script>
 </body>
 
 </html>

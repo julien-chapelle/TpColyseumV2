@@ -74,6 +74,10 @@ if (isset($_POST['passwordConfirm'])) {
         $arrayError['passwordConfirm'] = 'Les mots de passes ne sont pas identiques !';
     };
 };
+// ERROR CGV VALIDATE
+if (isset($_POST['addClientSubmit']) && !isset($_POST['clientApprouve'])) {
+    $arrayError['clientApprouve'] = 'Vous ne pouvez pas poursuivre sans accepter les conditions générales de ventes';
+}
 
 if (isset($_POST['addClientSubmit']) && empty($arrayError)) {
     $lastname = htmlspecialchars(ucfirst(mb_strtolower($_POST['lastnameAdd'], 'UTF-8')));
@@ -103,4 +107,3 @@ if (isset($_POST['addClientSubmit']) && empty($arrayError)) {
     $_SESSION['id'] = $lastId;
     header('refresh:2;url=http://colyseumv2/views/clients/detailClient.php?client=' . $_SESSION['id']);
 }
-?>
