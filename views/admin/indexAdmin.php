@@ -159,8 +159,8 @@ require '../../controllers/admin/indexAdminController.php';
                         <p>Êtes-vous sûr de vouloir supprimer ce spectacle ?</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <a type="button" class="btn btn-primary" href="?deleteShows=<?= $shows['id_Shows'] ?>">Supprimer</a>
+                        <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Close</button>
+                        <a type="button" class="btn btn-outline-danger" href="?deleteShows=<?= $shows['id_Shows'] ?>">Supprimer</a>
                     </div>
                 </div>
             </div>

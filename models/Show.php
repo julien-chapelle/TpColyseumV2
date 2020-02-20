@@ -142,6 +142,8 @@ class Show extends Database
         colyseum_Shows.performer_Shows, colyseum_Shows.dateHour_Shows, colyseum_Shows.duration_Shows,
          colyseum_ShowTypes.types_ShowTypes FROM colyseum_Shows INNER JOIN colyseum_ShowTypes 
          on colyseum_Shows.id_ShowTypes=colyseum_showtypes.id_ShowTypes WHERE colyseum_Shows.title_Shows
+        LIKE :search
+        OR colyseum_ShowTypes.types_ShowTypes
         LIKE :search';
 
         $pdoResult = $this->db->prepare($query_search);

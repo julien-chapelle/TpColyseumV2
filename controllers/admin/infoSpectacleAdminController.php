@@ -83,7 +83,6 @@ if (isset($_POST['confirmUpdateShow']))
     }
     if (empty($errorsMessageShows))
     {
-        var_dump($ShowManager);
         $ShowManager->updateShows($_GET['id']);
     }
 }

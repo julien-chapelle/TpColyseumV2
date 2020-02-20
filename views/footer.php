@@ -2,13 +2,13 @@
     <div class="row m-0">
         <div class="col p-0">
             <div class="row text-center bg-white px-2 py-2 m-0 justify-content-around">
-                <button type="button" class="btn btn-warning text-white" data-toggle="modal" data-target="#exampleModal1">
+                <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal1">
                     Mentions légales
                 </button>
-                <button type="button" class="btn btn-warning text-white" data-toggle="modal" data-target="#exampleModal2">
+                <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal2">
                     Plan du Site
                 </button>
-                <button type="button" class="btn btn-warning text-white" data-toggle="modal" data-target="#exampleModal3">
+                <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal3">
                     CGV
                 </button>
             </div>
@@ -18,7 +18,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">CVG</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">CGV</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -210,7 +210,7 @@
                     <p>Mise à jour au 02/12/2019</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Fermer</button>
                 </div>
             </div>
         </div>
@@ -219,7 +219,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Plan</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Adresse</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -228,7 +228,7 @@
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2592.0261368879383!2d0.13147871569662548!3d49.484013279353796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e02e55af007f11%3A0xcb679803210d6c5c!2s2%20Rue%20de%20Dombasle%2C%2076600%20Le%20Havre!5e0!3m2!1sfr!2sfr!4v1582099722901!5m2!1sfr!2sfr" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Fermer</button>
                 </div>
             </div>
         </div>
@@ -260,7 +260,7 @@
                     Site Web : www.lhp3-Arena.fr<br />
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Fermer</button>
                 </div>
             </div>
         </div>
