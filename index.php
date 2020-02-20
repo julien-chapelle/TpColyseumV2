@@ -38,56 +38,43 @@
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
-                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <?php foreach ($list as $comment) : ?>
-                                <div class="carousel-item active">
-                                    <div class="media">
-                                        <div class="media-body">
-                                            <h5 class="mt-0"><?= $comment["firstName_Clients"] ?>, <?= $comment["title_Shows"] ?></h5>
-                                            <?= $comment["text_Comment"] ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-12">
-                            <div id="carouselExampleCaptionsMedia" class="carousel slide my-2" data-ride="carousel" title="Avis clients">
-                                <ol class="carousel-indicators">
-                                    <li data-target="#carouselExampleCaptionsMedia" data-slide-to="active"></li>
-                                    <li data-target="#carouselExampleCaptionsMedia" data-slide-to="1"></li>
-                                    <li data-target="#carouselExampleCaptionsMedia" data-slide-to="2"></li>
-                                </ol>
-                                <div class="carousel-inner">
-                                    <?php foreach ($list as $comment) : ?>
-                                        <div class="carousel-item <?= $comment['id_Clients'] == 1 ? 'active' : '' ?>">
-                                            <div class="media p-3 m-3 shadow borderRadiusFormLogin rounded">
-                                                <img src="assets/img_avatar_choice/man_1.png" class="mr-3 sizeAvatarView" alt="<?= 'imageAvatar' . $comment['firstName_Clients'] ?>">
-                                                <div class="media-body">
-                                                    <h5 class="mt-0"><?= $comment['firstName_Clients'] . ':' ?></h5>
-                                                    <?= $comment['text_Comment'] ?>
-                                                </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div id="carouselExampleCaptionsMedia" class="carousel slide my-2" data-ride="carousel" title="Avis clients">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleCaptionsMedia" data-slide-to="active"></li>
+                                <li data-target="#carouselExampleCaptionsMedia" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleCaptionsMedia" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <?php foreach ($list as $comment) : ?>
+                                    <div class="carousel-item <?= $comment['id_Clients'] == 1 ? 'active' : '' ?>">
+                                        <div class="media p-3 m-3 shadow borderRadiusFormLogin rounded">
+                                            <img src="assets/img_avatar_choice/man_1.png" class="mr-3 sizeAvatarView" alt="<?= 'imageAvatar' . $comment['firstName_Clients'] ?>">
+                                            <div class="media-body">
+                                                <h5 class="mt-0"><?= $comment['firstName_Clients'] . ':' ?></h5>
+                                                <?= $comment['text_Comment'] ?>
                                             </div>
                                         </div>
-                                    <?php endforeach; ?>
-                                </div>
-                                <a class="carousel-control-prev" href="#carouselExampleCaptionsMedia" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselExampleCaptionsMedia" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
+                                    </div>
+                                <?php endforeach; ?>
                             </div>
-                            <!-- carousel media object avis fin -->
+                            <a class="carousel-control-prev" href="#carouselExampleCaptionsMedia" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleCaptionsMedia" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
                         </div>
-                    </div>2
+                        <!-- carousel media object avis fin -->
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <?php require('views/footer.php') ?>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
