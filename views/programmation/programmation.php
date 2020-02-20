@@ -18,10 +18,15 @@
     <?php require "../header.php" ?>
     <div class="container">
         <h1>Liste des spectacles</h1>
-        <form class="form-inline my-2 my-lg-0" action="" method="POST">
-            <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search">
-            <button class="btn btn-outline-warning my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-        </form>
+        <div class="row m-0">
+            <form class="form-inline my-2 my-lg-0" action="" method="POST">
+                <button class="btn btn-outline-warning my-2 my-sm-0" type="submit" name="returnListProgrammation" title="Retour à liste des spectacles"><i class="fas fa-reply"></i></button>
+            </form>
+            <form class="form-inline my-2 my-lg-0" action="" method="POST">
+                <input class="form-control mx-sm-2" type="search" name="search" placeholder="Recherche">
+                <button class="btn btn-outline-warning my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
         <?php if (isset($_POST["search"])) : ?>
             <?php foreach ($resultSearch as $search) : ?>
                 <div class="card mb-3 mt-3 borderRadiusFormLogin">
@@ -31,7 +36,7 @@
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <p class="card-text"><small class="text-muted"><?= $search['types_ShowTypes']; ?></small></p>
+                                <p class="card-text h5"><?= $search['types_ShowTypes']; ?></p>
                                 <h5 class="card-title h3"><?= $search['title_Shows']; ?></h5>
                                 <p class="card-text">
                                     <?= utf8_encode(strftime('%d %B %Y', strtotime($search['dateHour_Shows']))) . ' (' . strftime('%HH%M', strtotime($search['duration_Shows'])) . ')' ?>
@@ -43,29 +48,32 @@
             <?php endforeach; ?>
         <?php endif; ?>
         <hr>
-        <?php foreach ($months as $month) : ?>
-            <h3><?= ucfirst(utf8_encode(strftime('%B', strtotime($month["month"])))) ?></h3>
-            <?php foreach ($shows as $content) : ?>
-                <?php if (strftime('%B', strtotime($month["month"])) == strftime('%B', strtotime($content['dateHour_Shows']))) : ?>
-                    <div class="card mb-3 borderRadiusFormLogin">
-                        <div class="row no-gutters">
-                            <div class="col-md-4">
-                                <img src="../../assets/img/<?= $content['img_Shows']; ?>" class="card-img" alt="Image spectacle">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <p class="card-text"><small class="text-muted"><?= $content['types_ShowTypes']; ?></small></p>
-                                    <h5 class="card-title h3"><?= $content['title_Shows']; ?></h5>
-                                    <p class="card-text">
-                                        <?= utf8_encode(strftime('%d %B %Y', strtotime($content['dateHour_Shows']))) . ' (' . strftime('%HH%M', strtotime($content['duration_Shows'])) . ')' ?>
-                                    </p>
+        <?php if (isset($_POST["search"])) : ?>
+        <?php else : ?>
+            <?php foreach ($months as $month) : ?>
+                <h3><?= ucfirst(utf8_encode(strftime('%B', strtotime($month["month"])))) ?></h3>
+                <?php foreach ($shows as $content) : ?>
+                    <?php if (strftime('%B', strtotime($month["month"])) == strftime('%B', strtotime($content['dateHour_Shows']))) : ?>
+                        <div class="card mb-3 borderRadiusFormLogin">
+                            <div class="row no-gutters">
+                                <div class="col-md-4">
+                                    <img src="../../assets/img/<?= $content['img_Shows']; ?>" class="card-img" alt="Image spectacle">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <p class="card-text h5"><?= $content['types_ShowTypes']; ?></p>
+                                        <h5 class="card-title h3"><?= $content['title_Shows']; ?></h5>
+                                        <p class="card-text">
+                                            <?= utf8_encode(strftime('%d %B %Y', strtotime($content['dateHour_Shows']))) . ' (' . strftime('%HH%M', strtotime($content['duration_Shows'])) . ')' ?>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                <?php endif; ?>
+                    <?php endif; ?>
+                <?php endforeach; ?>
             <?php endforeach; ?>
-        <?php endforeach; ?>
+        <?php endif; ?>
     </div>
 
 

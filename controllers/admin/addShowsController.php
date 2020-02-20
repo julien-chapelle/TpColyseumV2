@@ -4,6 +4,10 @@ require '../../models/Show.php';
 require '../../models/ShowType.php';
 require '../../models/Genre.php';
 $ShowManager = new Show();
+$ShowTypesManager = new ShowTypes();
+$GenresManager = new Genres();
+$listGenres = $GenresManager->getListGenres();
+$listShowsTypes = $ShowTypesManager->getListShowTypes();
 $errorsMessageShows = [];
 if (isset($_POST['confirmAddShow']))
 {
@@ -14,7 +18,7 @@ if (isset($_POST['confirmAddShow']))
         if (move_uploaded_file($_FILES['imgShow']['tmp_name'], $file))
         {
             echo 'le fichier' . basename($_FILES['imgShow']['name']) . 'à été upload.';
-            $ShowManager->setImg_Shows($file);
+            $ShowManager->setImg_Shows($_FILES['imgShow']['name']);
         }
     }
     if (!empty($_POST['titleShow']))
@@ -71,6 +75,7 @@ if (isset($_POST['confirmAddShow']))
     }
     if (empty($errorsMessageShows))
     {
+
         $ShowManager->addShows();
         header('Location: indexAdmin.php');
         exit();

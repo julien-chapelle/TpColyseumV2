@@ -18,6 +18,7 @@ require('../../controllers/admin/connexionAdminController.php');
 </head>
 
 <body>
+    <?php require '../header.php'; ?>
     <div class="container-fluid heightBody">
         <div class="row">
             <div class="col-12">

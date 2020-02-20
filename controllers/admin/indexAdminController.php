@@ -13,16 +13,22 @@ $listContact = $ContactManager->getListContact();
 $listShows = $ShowManager->toListAll();
 $listClients = $ClientManager->listClients();
 $listTickets = $TicketManager->getListTickets();
-if (isset($_GET['deleteShows']))
-{
+if (isset($_GET['deleteShows'])) {
     $ShowManager->deleteShows($_GET['deleteShows']);
     header('Location: indexAdmin.php');
     exit();
 }
-if (isset($_GET['deleteTicket']))
-{
+if (isset($_GET['deleteTicket'])) {
     $TicketManager->deleteTicket($_GET['deleteTicket']);
-    header('Location: infoSpectacleAdmin.php?id=' . $_SESSION['idShow']);
+    header('Location: indexAdmin.php');
     exit();
+}
+if (isset($_POST['logoutAdmin'])) {
+    session_unset();
+    session_destroy();
+    header('Location: http://colyseumv2/loginAdmin/');
+}
+if ($_SERVER['PHP_SELF'] == '/views/admin/indexAdmin.php' && !isset($_SESSION['idAdmin'])) {
+    header('Location: http://colyseumv2/loginAdmin/');
 }
 ?>

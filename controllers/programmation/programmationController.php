@@ -9,4 +9,7 @@ if(isset($_POST["search"]) && !empty($_POST["search"])){
     $search = $_POST["search"];
     $resultSearch = $show->toSearch($search);
 }
+if(isset($_POST["returnListProgrammation"])) {
+    header('Refresh: 0');
+}
 ?>

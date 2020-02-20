@@ -31,10 +31,15 @@ require '../../controllers/admin/indexAdminController.php';
         <div class="row justify-content-center mt-3">
             <div class="col-11">
                 <div class="row">
-                    <div class="col-4">
-                        <h2 class="text-center">Liste des Spectacles</h2>
+                    <div class="col-4 text-left">
+                        <h2>Liste des Spectacles</h2>
                     </div>
-                    <div class="col-8 text-right">
+                    <div class="col-4 text-center">
+                        <form method="POST" action="">
+                            <button class="btn btn-sm btn-success" type="submit" name="logoutAdmin" title="Déconnexion admin" >Déconnexion</button>
+                        </form>
+                    </div>
+                    <div class="col-4 text-right">
                         <a type="button" class="btn btn-sm btn-success" href="addShows.php">Ajouter un
                             spectacle</a>
                     </div>

@@ -109,7 +109,8 @@ class Show extends Database
     }
     public function addShows()
     {
-        $queryShows = $this->db->prepare('INSERT INTO `colyseum_shows` (`title_Shows`, `performer_Shows`, `dateHour_Shows`, `duration_Shows`, `id_ShowTypes`, `id_Genres`) VALUES (:titleShows, :performerShows, :dateHourShows, :durationShows, :idShowtypes, :idGenres)');
+        $queryShows = $this->db->prepare('INSERT INTO `colyseum_shows` (`img_Shows`, `title_Shows`, `performer_Shows`, `dateHour_Shows`, `duration_Shows`, `id_ShowTypes`, `id_Genres`) VALUES (:imgShows, :titleShows, :performerShows, :dateHourShows, :durationShows, :idShowtypes, :idGenres)');
+        $queryShows->bindValue(':imgShows', $this->getImg_Shows(), PDO::PARAM_STR);
         $queryShows->bindValue(':titleShows', $this->getTitle_Shows(), PDO::PARAM_STR);
         $queryShows->bindValue(':performerShows', $this->getPerformer_Shows(), PDO::PARAM_STR);
         $queryShows->bindValue(':dateHourShows', $this->getDateHour_Shows(), PDO::PARAM_STR);
@@ -121,7 +122,8 @@ class Show extends Database
     }
     public function updateShows($idShows)
     {
-        $queryUpdateShow = $this->db->prepare('UPDATE `colyseum_shows` SET `title_Shows` = :titleShows, `performer_Shows` = :performerShows, `dateHour_Shows` = :dateHourShows, `duration_Shows` = :durationShows, `id_ShowTypes` = :id_ShowTypes, `id_Genres` = :id_Genres WHERE `id_Shows` = ' . $idShows);
+        $queryUpdateShow = $this->db->prepare('UPDATE `colyseum_shows` SET `img_Shows` = :imgShows, `title_Shows` = :titleShows, `performer_Shows` = :performerShows, `dateHour_Shows` = :dateHourShows, `duration_Shows` = :durationShows, `id_ShowTypes` = :id_ShowTypes, `id_Genres` = :id_Genres WHERE `id_Shows` = ' . $idShows);
+        $queryUpdateShow->bindValue(':imgShows', $this->getImg_Shows(), PDO::PARAM_STR);
         $queryUpdateShow->bindValue(':titleShows', $this->getTitle_Shows(), PDO::PARAM_STR);
         $queryUpdateShow->bindValue(':performerShows', $this->getPerformer_Shows(), PDO::PARAM_STR);
         $queryUpdateShow->bindValue(':dateHourShows', $this->getDateHour_Shows(), PDO::PARAM_STR);
