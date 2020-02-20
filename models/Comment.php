@@ -53,7 +53,10 @@ class Comment extends Database
     }
 
     public function toList(){        
-        $pdoQuery = "SELECT colyseum_comment.text_Comment, colyseum_clients.firstName_Clients, colyseum_shows.title_Shows FROM colyseum_comment, colyseum_shows, colyseum_clients WHERE colyseum_comment.id_Shows=colyseum_shows.id_Shows AND colyseum_comment.id_Clients=colyseum_clients.id_Clients";
+        $pdoQuery = "SELECT colyseum_comment.text_Comment, colyseum_clients.firstName_Clients, colyseum_shows.title_Shows 
+        FROM colyseum_comment, colyseum_shows, colyseum_clients
+        WHERE colyseum_comment.id_Shows=colyseum_shows.id_Shows 
+        AND colyseum_comment.id_Clients=colyseum_clients.id_Clients";
 
         $pdoResult = $this->db->prepare($pdoQuery);
         

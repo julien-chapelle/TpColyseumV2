@@ -1,5 +1,5 @@
 <?php
-require('../../controllers/admin/connexionAdminController.php');
+require 'connexionAdminController.php';
 ?>
 <!doctype html>
 <html lang="fr">
@@ -10,7 +10,7 @@ require('../../controllers/admin/connexionAdminController.php');
     <!-- Logo title -->
     <link rel="shortcut icon" href="../../assets/img/logoLhp3Arena.png" class="lhp3LogoTitle" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Admin - Connexion</title>
+    <title>LHP3 Arena</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <link rel="stylesheet" href="../../assets/css/style.css">
@@ -18,7 +18,7 @@ require('../../controllers/admin/connexionAdminController.php');
 </head>
 
 <body>
-    <div class="container-fluid heightBody">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <h1 class="text-center">Connexion Administrateur</h1>
@@ -41,7 +41,7 @@ require('../../controllers/admin/connexionAdminController.php');
                     </div>
                     <div class="form-row">
                         <div class="form-group col-12">
-                            <button type="submit" class="btn btn-sm btn-block btn-success" name="connexionAdmin">Connexion</button>
+                            <button type="submit" class="btn btn-sm btn-block btn-outline-dark" name="connexionAdmin">Connexion</button>
                         </div>
                     </div>
                 </form>

@@ -156,5 +156,19 @@ class Clients extends Database
         $deleteClients->bindValue(':currentId', $this->getId(), PDO::PARAM_INT);
         $deleteClients->execute();
     }
+    //CLIENT BOOKING
+    public function bookingClients()
+    {
+        $bookingClientsQuery = "SELECT `colyseum_clients`.`id_Clients`, 
+        FROM `colyseum_clients`
+        WHERE `id_Clients` = :currentId";
+
+        $bookingClientsResult = $this->db->prepare($bookingClientsQuery);
+        $bookingClientsResult->bindValue(':currentId', $this->getId(), PDO::PARAM_INT);
+        if ($bookingClientsResult->execute()) {
+            $bookingClients = $bookingClientsResult->fetchAll(PDO::FETCH_ASSOC);
+            return $bookingClients;
+        };
+    }
 }
 ?>

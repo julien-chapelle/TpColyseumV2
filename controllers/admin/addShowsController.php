@@ -5,19 +5,18 @@ require '../../models/ShowType.php';
 require '../../models/Genre.php';
 $ShowManager = new Show();
 $errorsMessageShows = [];
-if(isset($_POST['logoutAdmin']) || !isset($_SESSION['idAdmin'])) {
-    session_unset();
-    session_destroy();
-    header('Location: http://colyseumv2/views/admin/connexionAdmin.php');
-};
-
 if (isset($_POST['confirmAddShow']))
 {
-    $ShowManager->setImg_Shows(null);
-    // else
-    // {
-    //     // $errorsMessageShows['imgShow'] = 'Veuillez ajouter une affiche pour le spectacle.';
-    // }
+    if (!empty($_FILES['imgShow']))
+    {
+        $dirFile = '../../assets/img/';
+        $file = $dirFile . basename($_FILES['imgShow']['name']);
+        if (move_uploaded_file($_FILES['imgShow']['tmp_name'], $file))
+        {
+            echo 'le fichier' . basename($_FILES['imgShow']['name']) . 'à été upload.';
+            $ShowManager->setImg_Shows($file);
+        }
+    }
     if (!empty($_POST['titleShow']))
     {
         $ShowManager->setTitle_Shows($_POST['titleShow']);
@@ -72,8 +71,9 @@ if (isset($_POST['confirmAddShow']))
     }
     if (empty($errorsMessageShows))
     {
-        var_dump($ShowManager);
         $ShowManager->addShows();
+        header('Location: indexAdmin.php');
+        exit();
     }
 }
 ?>

@@ -9,12 +9,7 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link text-dark" href="http://colyseumv2/">Accueil</a>
       <a class="nav-item nav-link text-dark" href="http://colyseumv2/views/programmation/programmation.php">Programmation</a>
-      <a class="nav-item nav-link text-dark" href="http://colyseumv2/views/billeterie/billeterie.php">Billetterie</a>
-      <a class="nav-item nav-link text-dark" href="<?= isset($_SESSION) && !empty($_SESSION) && isset($_GET['clientId']) ? 'http://colyseumv2/views/clients/detailClient.php?clientId=' . $_SESSION['id'] : 'http://colyseumv2/views/clients/compte.php' ?>"><?= isset($_SESSION) && !empty($_SESSION) && isset($_SESSION['firstname']) ? '<i class="fas fa-user-check"></i> ' . $_SESSION['firstname'] : 'Mon compte' ?></a>
-      <form method="POST" action="http://colyseumv2/views/programmation/result.php?page=1" class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-1" type="search" placeholder="Recherche" aria-label="Search" name="searchTitle">
-        <button class="btn btn-outline-warning my-2 my-sm-0" name="searchSubmit" type="submit" title="Recherche"><i class="fas fa-search"></i></button>
-      </form>
+      <a class="nav-item nav-link text-dark" href="<?= isset($_SESSION) && !empty($_SESSION) && isset($_SESSION['firstname']) ? 'http://colyseumv2/views/clients/detailClient.php?clientId=' . $_SESSION['id'] : 'http://colyseumv2/views/clients/compte.php' ?>"><?= isset($_SESSION) && !empty($_SESSION) && isset($_SESSION['firstname']) ? '<i class="fas fa-user-check"></i> ' . $_SESSION['firstname'] : 'Mon compte' ?></a>
     </div>
   </div>
 </nav>

@@ -1,6 +1,6 @@
 <?php
-require '../../models/Database.php';
-require '../../models/Admin.php';
+require '../models/Database.php';
+require '../models/Admin.php';
 $AdminManager = new Admin();
 $errorsMessageAdmin = [];
 
@@ -28,7 +28,7 @@ if (isset($_POST['connexionAdmin']))
         if ($AdminManager->connexionAdmin())
         {
             $_SESSION['idAdmin'] = $AdminManager->getIdAdmin();
-            header('Location: indexAdmin.php');
+            header('Location: ../views/admin/indexAdmin.php');
             exit();
         }
         else

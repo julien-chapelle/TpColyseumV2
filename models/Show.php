@@ -94,13 +94,8 @@ class Show extends Database
     }
     public function getShow($idShows)
     {
-        $queryShows = $this->db->query('SELECT * FROM `colyseum_shows` 
-        INNER JOIN `colyseum_showtypes` 
-        ON `colyseum_shows`.`id_ShowTypes` = `colyseum_showtypes`.`id_ShowTypes` 
-        INNER JOIN `colyseum_genres` 
-        ON `colyseum_shows`.`id_Genres` = `colyseum_genres`.`id_Genres` 
-        WHERE `id_Shows` = ' . $idShows);
-        foreach ($queryShows->fetchAll() as $value)
+        $queryShows = $this->db->query('SELECT * FROM `colyseum_shows` INNER JOIN `colyseum_showtypes` ON `colyseum_shows`.`id_ShowTypes` = `colyseum_showtypes`.`id_ShowTypes` INNER JOIN `colyseum_genres` ON `colyseum_shows`.`id_Genres` = `colyseum_genres`.`id_Genres` WHERE `id_Shows` = ' . $idShows);
+        foreach ($queryShows->fetchAll() as $index => $value)
         {
             $this->setId_Shows($value['id_Shows']);
             $this->setImg_Shows($value['img_Shows']);
@@ -114,31 +109,30 @@ class Show extends Database
     }
     public function addShows()
     {
-        $queryShows = $this->db->prepare('INSERT INTO `colyseum_shows` (`title_Shows`, `performer_Shows`, `dateHour_Shows`, `duration_Shows`, `id_ShowTypes`, `id_Genres`) 
-        VALUES (:titleShows, :performerShows, :dateHourShows, :durationShows, :idShowtypes, :idGenres)');
-        // $queryShows->bindValue(':imgShows', $this->getImg_Shows(), PDO::PARAM_STR);
+        $queryShows = $this->db->prepare('INSERT INTO `colyseum_shows` (`title_Shows`, `performer_Shows`, `dateHour_Shows`, `duration_Shows`, `id_ShowTypes`, `id_Genres`) VALUES (:titleShows, :performerShows, :dateHourShows, :durationShows, :idShowtypes, :idGenres)');
         $queryShows->bindValue(':titleShows', $this->getTitle_Shows(), PDO::PARAM_STR);
         $queryShows->bindValue(':performerShows', $this->getPerformer_Shows(), PDO::PARAM_STR);
         $queryShows->bindValue(':dateHourShows', $this->getDateHour_Shows(), PDO::PARAM_STR);
         $queryShows->bindValue(':durationShows', $this->getDuration_Shows(), PDO::PARAM_STR);
         $queryShows->bindValue(':idShowtypes', $this->getId_ShowTypes(), PDO::PARAM_INT);
         $queryShows->bindValue(':idGenres', $this->getId_Genres(), PDO::PARAM_INT);
-        var_dump($queryShows->execute());
+        $queryShows->execute();
 
     }
-    public function toListMonth()
-    { 
-        $query_months = 'SELECT DISTINCT DATE_FORMAT(colyseum_Shows.dateHour_Shows,\'%M\') as `month` FROM colyseum_Shows;';
-        
-        $pdoResult = $this->db->prepare($query_months);
-
-        if ($pdoResult->execute()) {
-            $result = $pdoResult->fetchAll(PDO::FETCH_ASSOC);
-            return $result;
-        } else {
-            echo 'Erreur';
-        }
-
+    public function updateShows($idShows)
+    {
+        $queryUpdateShow = $this->db->prepare('UPDATE `colyseum_shows` SET `title_Shows` = :titleShows, `performer_Shows` = :performerShows, `dateHour_Shows` = :dateHourShows, `duration_Shows` = :durationShows, `id_ShowTypes` = :id_ShowTypes, `id_Genres` = :id_Genres WHERE `id_Shows` = ' . $idShows);
+        $queryUpdateShow->bindValue(':titleShows', $this->getTitle_Shows(), PDO::PARAM_STR);
+        $queryUpdateShow->bindValue(':performerShows', $this->getPerformer_Shows(), PDO::PARAM_STR);
+        $queryUpdateShow->bindValue(':dateHourShows', $this->getDateHour_Shows(), PDO::PARAM_STR);
+        $queryUpdateShow->bindValue(':durationShows', $this->getDuration_Shows(), PDO::PARAM_STR);
+        $queryUpdateShow->bindValue(':id_ShowTypes', $this->getId_ShowTypes(), PDO::PARAM_INT);
+        $queryUpdateShow->bindValue(':id_Genres', $this->getId_Genres(), PDO::PARAM_INT);
+        $queryUpdateShow->execute();
+    }
+    public function deleteShows($idShows)
+    {
+        $this->db->exec('DELETE FROM `colyseum_shows` WHERE `id_Shows` = ' . $idShows);
     }
     public function toSearch($search)
     {
@@ -167,7 +161,7 @@ class Show extends Database
     public function toListByMonth()
     {  
         
-       $query_cards = 'SELECT colyseum_shows.img_Shows, colyseum_shows.title_Shows, colyseum_shows.performer_Shows, colyseum_shows.dateHour_Shows, colyseum_shows.duration_Shows, colyseum_showTypes.types_ShowTypes, DATE_FORMAT(colyseum_shows.dateHour_Shows,\'%M\') as `month` FROM colyseum_shows, colyseum_ShowTypes';
+       $query_cards = 'SELECT colyseum_shows.img_Shows, colyseum_shows.title_Shows, colyseum_shows.performer_Shows, colyseum_shows.dateHour_Shows, colyseum_shows.duration_Shows, colyseum_showTypes.types_ShowTypes, DATE_FORMAT(colyseum_shows.dateHour_Shows,\'%M\') as `month` FROM colyseum_shows INNER JOIN colyseum_showtypes ON colyseum_shows.id_ShowTypes = colyseum_showtypes.id_ShowTypes ORDER BY UNIX_TIMESTAMP(colyseum_shows.dateHour_Shows) ASC';
 
         $pdoResult = $this->db->prepare($query_cards);
         
