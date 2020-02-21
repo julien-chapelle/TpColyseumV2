@@ -38,4 +38,7 @@ if (isset($_POST['connexionAdmin']))
     }
 
 }
+if (isset($_SESSION['idAdmin']) && $_SERVER['PHP_SELF'] == '/loginAdmin/index.php' || isset($_SESSION['idAdmin']) && $_SERVER['REQUEST_URI'] == '/loginAdmin/') {
+    header('Location: http://colyseumv2/views/admin/indexAdmin.php');
+}
 ?>
