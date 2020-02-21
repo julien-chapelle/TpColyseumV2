@@ -6,7 +6,7 @@
                     Mentions légales
                 </button>
                 <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal2">
-                    Plan du Site
+                    Contact
                 </button>
                 <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal3">
                     CGV
@@ -224,8 +224,15 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body text-center">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2592.0261368879383!2d0.13147871569662548!3d49.484013279353796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e02e55af007f11%3A0xcb679803210d6c5c!2s2%20Rue%20de%20Dombasle%2C%2076600%20Le%20Havre!5e0!3m2!1sfr!2sfr!4v1582099722901!5m2!1sfr!2sfr" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                </div>
+                <div class="modal-body text-center">
+                    <p class="h5"><i class="fas fa-map-marked-alt"></i> LHP3 Arena : <br />
+                        2 rue Dombasle <br />
+                        76600 - Le Havre</p>
+                    <p class="h5"><a href="tel:+33986271704"><i class="fas fa-phone-square-alt"></i> 09 86 27 17 04</a></p>
+                    <p class="h5"><a href="https://lamanu.fr/campus/le-havre-formation-continue-initiale/"><i class="fas fa-at"></i> https://lamanu.fr</a></p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Fermer</button>

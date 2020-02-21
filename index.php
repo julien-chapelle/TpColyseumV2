@@ -16,8 +16,8 @@
 <body>
     <?php require('views/header.php') ?>
     <div class="container-fluid heightBody p-0 m-0">
-        <div class="row justify-content-center">
-            <div class="col">
+        <div class="row justify-content-center m-0">
+            <div class="col p-0">
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
