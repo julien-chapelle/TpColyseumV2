@@ -31,6 +31,7 @@ if (isset($_POST['confirmUpdateShow']))
             echo 'le fichier' . basename($_FILES['imgShow']['name']) . 'à été upload.';
             $ShowManager->setImg_Shows($file);
         }
+        header('Refresh: 0');
     }
     if (!empty($_POST['titleShow']))
     {
