@@ -39,8 +39,8 @@
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-12">
+                <div class="row justify-content-center m-0">
+                    <div class="col-12 p-0">
                         <div id="carouselExampleCaptionsMedia" class="carousel slide my-2 carouselSpeed" data-ride="carousel" title="Avis clients">
                             <ol class="carousel-indicators">
                                 <li data-target="#carouselExampleCaptionsMedia" data-slide-to="active"></li>
