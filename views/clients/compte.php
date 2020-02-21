@@ -16,7 +16,7 @@
 
 <body>
   <?php require('../header.php') ?>
-  <div class="container-fluid heightBody">
+  <div class="container-fluid">
     <div class="row justify_content-center">
       <div class="col-lg-6 col-sm-10 p-0">
         <!-- PICTURE -->

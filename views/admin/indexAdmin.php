@@ -81,7 +81,7 @@ require '../../controllers/admin/indexAdminController.php';
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-4">
+            <div class="col-11">
                 <div class="row">
                     <div class="col-10">
                         <h2>Liste des utilisateurs</h2>
@@ -110,7 +110,7 @@ require '../../controllers/admin/indexAdminController.php';
                     </table>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-11">
                 <div class="row">
                     <div class="col-10">
                         <h2>Tickets en vente</h2>

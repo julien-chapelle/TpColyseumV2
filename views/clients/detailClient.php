@@ -15,7 +15,7 @@
 
 <body>
   <?php require('../header.php') ?>
-  <div class="container-fluid heightBody">
+  <div class="container-fluid">
     <div class="row justify_content-center">
       <div class="card m-5 p-2 borderRadiusFormLogin">
         <div class="row no-gutters">
