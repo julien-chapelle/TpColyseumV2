@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 21 fév. 2020 à 08:00
+-- Généré le :  ven. 21 fév. 2020 à 08:24
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `colyseum_clients` (
   `mail_Clients` varchar(255) NOT NULL,
   `password_Clients` varchar(255) NOT NULL,
   PRIMARY KEY (`id_Clients`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `colyseum_clients`
@@ -178,7 +178,7 @@ CREATE TABLE IF NOT EXISTS `colyseum_shows` (
   PRIMARY KEY (`id_Shows`),
   KEY `colyseum_Shows_colyseum_ShowTypes_FK` (`id_ShowTypes`),
   KEY `colyseum_Shows_colyseum_Genres0_FK` (`id_Genres`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `colyseum_shows`
@@ -203,7 +203,7 @@ CREATE TABLE IF NOT EXISTS `colyseum_showtypes` (
   `id_ShowTypes` int(11) NOT NULL AUTO_INCREMENT,
   `types_ShowTypes` varchar(50) NOT NULL,
   PRIMARY KEY (`id_ShowTypes`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `colyseum_showtypes`
@@ -214,7 +214,8 @@ INSERT INTO `colyseum_showtypes` (`id_ShowTypes`, `types_ShowTypes`) VALUES
 (2, 'Rap'),
 (3, 'Comédie Musicale'),
 (4, 'Ciné-concert'),
-(5, 'Comédie');
+(5, 'Comédie'),
+(6, 'Métal progressif');
 
 -- --------------------------------------------------------
 
@@ -230,7 +231,7 @@ CREATE TABLE IF NOT EXISTS `colyseum_tickets` (
   `id_Shows` int(11) NOT NULL,
   PRIMARY KEY (`id_Tickets`),
   KEY `colyseum_Tickets_colyseum_Shows_FK` (`id_Shows`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `colyseum_tickets`
